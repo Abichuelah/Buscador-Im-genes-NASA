@@ -1,0 +1,71 @@
+main {
+    min-height: calc(100vh - 160px);
+  }
+/* Estilo de la tarjeta */
+.card {
+  overflow: hidden;
+  transition: height 0.5s ease-in-out; /* Animación suave */
+  height: 300px; /* Altura inicial solo para mostrar imagen y título */
+}
+
+/* Imagen de la tarjeta */
+.card-img-top {
+  height: 200px;
+  object-fit: cover; /* Ajusta la imagen sin deformarla */
+  position: relative;
+}
+
+/* Contenedor del título sobre la imagen */
+.card-title-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro semitransparente */
+  color: white;
+  padding: 10px;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/* Cuerpo de la tarjeta: Oculto por defecto */
+.card-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+  padding: 10px;
+}
+
+/* Expandir la descripción al hacer hover */
+.card:hover .card-body {
+  max-height: 200px;
+  overflow-y: auto; /* Scroll interno si es necesario */
+}
+
+/* Estilo del footer */
+.card-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo claro semitransparente */
+  padding: 10px;
+  text-align: center;
+  border-top: 1px solid #ddd;
+}
+
+/* Estilo para la barra de desplazamiento */
+.card-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+
+.card-body::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+}
+
+/* Al pasar el cursor por la tarjeta, se expande */
+.card:hover {
+  height: 500px; /* Altura expandida para mostrar la descripción */
+}
+
